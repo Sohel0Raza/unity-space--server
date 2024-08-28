@@ -2,7 +2,7 @@ import {
   postCommentModel,
   postModel,
   commentReplayModel,
-} from "../../modeles/schemes.model.js";
+} from "../models/schemes.model.js";
 
 export const getAllComment = async (req, res) => {
   try {
@@ -69,7 +69,6 @@ export const createReplay = async (req, res) => {
       user: newReplay.user,
     });
     const result = await replayDoc.save();
-    console.log("✌️result --->", result);
 
     const comment = await postCommentModel
       .findOne({ _id: result.comment })

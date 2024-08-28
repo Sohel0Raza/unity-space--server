@@ -1,4 +1,4 @@
-import { postModel, postPhotoModel } from "../../modeles/schemes.model.js";
+import { postModel, postPhotoModel } from "../models/schemes.model.js";
 
 export const getPosts = async (req, res) => {
   try {

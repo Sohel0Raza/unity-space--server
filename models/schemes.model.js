@@ -1,14 +1,15 @@
 import mongoose from "mongoose";
-import { commentReplaySchema } from "../schemas/postSchemes/comment.reaplay.schema.js";
-import { postCommentSchema } from "../schemas/postSchemes/post.comment.schema.js";
-import { postPhotoSchema } from "../schemas/postSchemes/post.photo.schema.js";
-import { postReactSchema } from "../schemas/postSchemes/post.react.schema.js";
-import { postSchema } from "../schemas/postSchemes/post.schema.js";
-import { postShareSchema } from "../schemas/postSchemes/post.share.schema.js";
-import { storyReactSchema } from "../schemas/storySchema/story.react.schema.js";
-import { storySchema } from "../schemas/storySchema/story.schema.js";
+import { userSchema } from "../schemas/user/user.schema.js";
+import { commentReplaySchema } from "../schemas/post/comment.reaplay.schema.js";
+import { postCommentSchema } from "../schemas/post/post.comment.schema.js";
+import { postPhotoSchema } from "../schemas/post/post.photo.schema.js";
+import { postReactSchema } from "../schemas/post/post.react.schema.js";
+import { postSchema } from "../schemas/post/post.schema.js";
+import { postShareSchema } from "../schemas/post/post.share.schema.js";
+import { storyReactSchema } from "../schemas/story/story.react.schema.js";
+import { storySchema } from "../schemas/story/story.schema.js";
 
-// const userModel = mongoose.model("user", userSchema);
+const userModel = mongoose.model("user", userSchema);
 const postModel = mongoose.model("post", postSchema);
 const postPhotoModel = mongoose.model("postPhoto", postPhotoSchema);
 const postReactModel = mongoose.model("postReact", postReactSchema);
@@ -19,6 +20,7 @@ const storyModel = mongoose.model("story", storySchema);
 const storyReactModel = mongoose.model("storyReact", storyReactSchema);
 
 export {
+  userModel,
   postModel,
   postPhotoModel,
   postReactModel,

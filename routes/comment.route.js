@@ -4,7 +4,7 @@ import {
   createReplay,
   getAllComment,
   getAllReplay,
-} from "../../controlleres/commentsControlleres/comment.controller.js";
+} from "../controlleres/comment.controller.js";
 
 export const commentRouter = express.Router();
 
