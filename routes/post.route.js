@@ -5,10 +5,11 @@ import {
   getPosts,
   updatePost,
 } from "../controlleres/post.controller.js";
+import { verifyToken } from "../middlewares/auth.middleware.js";
 
 export const postRouter = express.Router();
 
-postRouter.get("/", getPosts);
-postRouter.post("/", createPost);
-postRouter.put("/:id", updatePost);
-postRouter.delete("/:id", deletePost);
+postRouter.get("/", verifyToken, getPosts);
+postRouter.post("/",verifyToken, createPost);
+postRouter.put("/:id",verifyToken, updatePost);
+postRouter.delete("/:id",verifyToken, deletePost);
