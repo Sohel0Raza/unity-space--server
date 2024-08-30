@@ -7,6 +7,8 @@ export const userSchema = new Schema({
   phoneOrEmail: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   gender: { type: String, required: true }, // will enum value fixed male or female
+  otp: { type: Number}, 
+  otpExpiryTime: { type: Number }, 
   isVerify: { type: Boolean, default: false }, 
 });
 

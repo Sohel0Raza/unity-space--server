@@ -18,7 +18,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/posts", postRouter);
 app.use("/api/comments", commentRouter);
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.q6zwl04.mongodb.net/unitySpaceDB?retryWrites=true&w=majority&appName=Cluster0/unitySpaceDB`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.q6zwl04.mongodb.net/unitySpaceDB?retryWrites=true&w=majority&appName=Cluster0`;
 
 async function run() {
   // Connect to mongoose
