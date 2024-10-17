@@ -1,7 +1,7 @@
 import {
+  commentReplayModel,
   postCommentModel,
   postModel,
-  commentReplayModel,
 } from "../models/schemes.model.js";
 
 export const getAllComment = async (req, res) => {
@@ -20,7 +20,7 @@ export const createComment = async (req, res) => {
     const newComment = req.body;
 
     const commetnDoc = new postCommentModel({
-      desciption: newComment.desciption,
+      description: newComment.description,
       post: newComment.post,
       user: newComment.user,
     });
@@ -64,7 +64,7 @@ export const createReplay = async (req, res) => {
     const newReplay = req.body;
 
     const replayDoc = new commentReplayModel({
-      desciption: newReplay.desciption,
+      description: newReplay.description,
       comment: newReplay.comment,
       user: newReplay.user,
     });

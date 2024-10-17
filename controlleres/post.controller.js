@@ -13,13 +13,15 @@ export const getPosts = async (req, res) => {
 
 export const createPost = async (req, res) => {
   try {
-    const newPost = req.body;
+    const photos = req.files.map((file) => {
+      return { url: file.path };
+    });
 
-    const savedPhotos = await postPhotoModel.insertMany(newPost.photos);
+    const savedPhotos = await postPhotoModel.insertMany(photos);
     const savedPhotoIds = savedPhotos.map((photo) => photo._id);
 
     const postDoc = new postModel({
-      desciption: newPost.desciption,
+      description: req.body.description,
       photos: savedPhotoIds,
     });
 
@@ -51,7 +53,7 @@ export const updatePost = async (req, res) => {
 
     const updatedPostDoc = {
       $set: {
-        desciption: post.desciption,
+        description: post.description,
         photos: updatedPhotoIds,
       },
     };
@@ -87,4 +89,3 @@ export const deletePost = async (req, res) => {
     });
   }
 };
-

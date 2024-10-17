@@ -7,6 +7,7 @@ import {
 } from "../controlleres/comment.controller.js";
 import { verifyToken } from "../middlewares/auth.middleware.js";
 
+
 export const commentRouter = express.Router();
 
 commentRouter.get("/", verifyToken, getAllComment);
